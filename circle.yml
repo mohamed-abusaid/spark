@@ -4,6 +4,9 @@ machine:
       version: openjdk8
 
 test:
+   pre:
+     - wget http://apache.mirror.anlx.net/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+     - tar -zxf apache-maven-3.3.9-bin.tar.gz
    override:
-     - ./dev/make-distribution.sh --name nerve-spark --tgz -Psparkr -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
+     - ./dev/make-distribution.sh --name nerve-spark --tgz -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
          timeout: 1800
