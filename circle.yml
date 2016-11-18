@@ -6,4 +6,4 @@ machine:
 test:
    pre:
      - sudo build/mvn -DskipTests clean package:
-       timeout: 1800
+         timeout: 1800
