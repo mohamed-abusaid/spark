@@ -6,7 +6,6 @@ machine:
 test:
    pre:
      - unset M2_HOME
-     - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
    override:
      - ./dev/make-distribution.sh --name nerve-spark --tgz -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
          timeout: 1800
