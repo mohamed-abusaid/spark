@@ -4,6 +4,6 @@ machine:
       version: openjdk8
 
 test:
-   pre:
+   override:
      - sudo build/mvn -DskipTests clean package:
          timeout: 1800
