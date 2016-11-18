@@ -5,5 +5,5 @@ machine:
 
 test:
    override:
-     - ./dev/make-distribution.sh --name nerve-spark --tgz -Psparkr -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
+     - sudo ./dev/make-distribution.sh --name nerve-spark --tgz -Psparkr -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
          timeout: 1800
