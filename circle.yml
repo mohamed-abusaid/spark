@@ -1,9 +1,14 @@
 machine:
   java:
     version: openjdk8
+
+dependencies:
+  override:
+
 test:
   override:
     - sudo apt-get purge maven2 maven -y
     - unset M2_HOME
+    - export M2_HOME=/home/ubuntu/spark/build/mvn
     - ./dev/make-distribution.sh --name nerve-spark --tgz -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
         timeout: 1800
