@@ -4,7 +4,8 @@ test:
     - sudo apt-get update -y
     - sudo apt-get install openjdk-8-jdk -y
     - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-    - printenv | grep -i java
+    # - printenv | grep -i java
+    - echo $JAVA_HOME
 
     - sudo apt-get purge maven2 maven -y
     - unset M2_HOME
