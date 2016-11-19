@@ -1,10 +1,4 @@
----
-machine: 
-  # override:
-    # - sudo update-alternatives --config java
-    # - sudo update-alternatives --config javac
-
-dependencies:
+test:
   override:
     - sudo add-apt-repository ppa:openjdk-r/ppa
     - sudo apt-get update
@@ -12,9 +6,6 @@ dependencies:
     - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
     - printenv | grep -i java
 
-
-test:
-  override:
     - sudo apt-get purge maven2 maven -y
     - unset M2_HOME
     - ./dev/make-distribution.sh --name nerve-spark --tgz -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
