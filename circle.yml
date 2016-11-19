@@ -3,13 +3,6 @@ machine:
     version: openjdk8
 test:
   override:
-    # - sudo add-apt-repository ppa:openjdk-r/ppa -y
-    # - sudo apt-get update -y
-    # - sudo apt-get install openjdk-8-jdk -y
-    # - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-    # - printenv | grep -i java
-    # - echo $JAVA_HOME
-
     - sudo apt-get purge maven2 maven -y
     - unset M2_HOME
     - ./dev/make-distribution.sh --name nerve-spark --tgz -Phadoop-2.6 -Dhadoop.version=2.6.0 -Pyarn -Phive -Phive-thriftserver -DskipTests -Pjava8-tests:
