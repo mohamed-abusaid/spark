@@ -4,6 +4,7 @@ machine:
 
 dependencies:
   override:
+    - echo "testing"
 
 test:
   override:
