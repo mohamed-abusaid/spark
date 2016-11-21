@@ -6,6 +6,13 @@ dependencies:
   override:
     - echo "testing"
     - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
+    - unset M2_HOME
     - printenv | grep -i M2_HOME
 
 test:
